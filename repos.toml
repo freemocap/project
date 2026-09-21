@@ -1,0 +1,45 @@
+# Core is cloned first; dependency URLs/branches come from its pyproject.toml.
+# Only the initial core checkout and repositories outside its sources live here.
+core = "freemocap"
+
+[[repos]]
+name = "freemocap"
+path = "repos/freemocap"
+url = "https://github.com/freemocap/freemocap"
+branch = "development-streaming"
+
+[[repos]]
+name = "skellycam"
+path = "repos/skellycam"
+source = "skellycam"
+
+[[repos]]
+name = "skellytracker"
+path = "repos/skellytracker"
+source = "skellytracker"
+
+[[repos]]
+name = "skellyforge"
+path = "repos/skellyforge"
+source = "skellyforge"
+
+[[repos]]
+name = "freemocap_blender_addon"
+path = "repos/freemocap_blender_addon"
+source = "freemocap_blender_addon"
+
+[[repos]]
+name = "skellylogs"
+path = "repos/utils/skellylogs"
+source = "skellylogs"
+
+[[repos]]
+name = "skellypings"
+path = "repos/utils/skellypings"
+source = "skellypings"
+
+[[repos]]
+name = "skellydocs"
+path = "repos/utils/skellydocs"
+url = "https://github.com/freemocap/skellydocs"
+branch = "main"

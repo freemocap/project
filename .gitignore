@@ -1,0 +1,18 @@
+# Independent repositories: never stage their contents in the workspace repo.
+/repos/
+# Keep legacy paths ignored until existing users run poe organize.
+/freemocap/
+/skellycam/
+/skellytracker/
+/skellyforge/
+/freemocap_blender_addon/
+/utils/skellylogs/
+/utils/skellypings/
+/utils/skellydocs/
+
+/.agents/
+/.codex/
+/.venv/
+__pycache__/
+*.py[cod]
+.DS_Store

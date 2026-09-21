@@ -1,0 +1,11 @@
+[tool.poe]
+executor.type = "simple"
+
+[tool.poe.tasks]
+organize = { script = "scripts.workspace:poe_main", help = "Move existing checkouts under repos/ without recloning; supports --dry-run" }
+setup = { script = "scripts.workspace:poe_main", help = "Clone missing repositories; preserve existing checkouts" }
+status = { script = "scripts.workspace:poe_main", help = "Show branch alignment, dirty files, upstream and core lock revisions" }
+fetch = { script = "scripts.workspace:poe_main", help = "Fetch origin for each repository without pulling or switching branches" }
+pull = { script = "scripts.workspace:poe_main", help = "Pull configured repositories with fast-forward only; supports --dry-run" }
+align = { script = "scripts.workspace:poe_main", help = "Fetch, align, pull, and rebuild Python environments; --force discards tracked edits" }
+test-tools = { script = "scripts.workspace:poe_main", help = "Test workspace tooling against temporary local Git repositories" }
