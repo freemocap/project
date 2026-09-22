@@ -14,15 +14,22 @@ New machines use `poe setup`. Child histories remain independent, without submod
 
 ## Authority and scope
 
-## Human-run commands — explicit owner instruction
+## Read-only commands and one-time mutation permission — explicit owner instruction
 
-Never execute shell, terminal, Git, Poe, environment-management, or other project
-commands yourself. Give the human the exact commands to run and wait for their
-reported output. This applies to inspection and validation commands as well as
-mutations, including fetch, pull, align, force, setup, tests, commits, and pushes.
-Earlier authorizations to execute commands are superseded by this instruction.
-Requests to provide or fix commands do not authorize executing them. Editing
-requested files with file-editing tools is permitted; do not use a shell to do it.
+Non-mutating commands are always allowed. Run read-only inspection and
+information-gathering commands without asking for permission.
+
+Before any operation that writes or changes state, show the human the exact
+command and give them the opportunity to run it themselves or explicitly grant
+one-time permission for the agent to run it. For file-editing tools, show the
+exact proposed patch instead. This includes file edits, environment changes,
+fetch, pull, align, force, setup, and tests that write files or caches.
+Permission to perform a mutation is always one-time and scoped to the approved
+operation; it never establishes standing permission for later mutations.
+Requests to provide or fix commands do not authorize executing mutations.
+Earlier mutation authorizations and exceptions elsewhere in this file are
+historical context, not current execution permission. The human-owned commit
+and push boundary below remains in effect.
 
 
 This file governs work across this workspace and its independent repositories.
