@@ -6,15 +6,16 @@
       <excludeFolder url="file://$MODULE_DIR$/repos/skellycam/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/repos/skellyforge/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/repos/skellytracker/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/repos/freemocap_blender_addon/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/repos/utils/skellylogs/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/repos/utils/skellypings/.venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
-  <component name="PackageRequirementsSettings" />
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
   </component>
-  <component name="ReSTService" />
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="py.test" />
   </component>
