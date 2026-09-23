@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/freemocap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/freemocap_blender_addon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/skellycam" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/skellyforge" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/skellytracker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/utils/skellydocs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/utils/skellylogs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/repos/utils/skellypings" vcs="Git" />
+  </component>
+</project>

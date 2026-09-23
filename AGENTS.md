@@ -14,22 +14,33 @@ New machines use `poe setup`. Child histories remain independent, without submod
 
 ## Authority and scope
 
-## Read-only commands and one-time mutation permission — explicit owner instruction
+## Local work authorization and protected state — explicit owner instruction
 
 Non-mutating commands are always allowed. Run read-only inspection and
 information-gathering commands without asking for permission.
+This includes reading datasets, logs, diagnostics, and files outside the source
+tree whenever the tool sandbox permits access. Do not ask conversationally for
+permission to read them; only tool-enforced access approvals may still be needed.
 
-Before any operation that writes or changes state, show the human the exact
-command and give them the opportunity to run it themselves or explicitly grant
-one-time permission for the agent to run it. For file-editing tools, show the
-exact proposed patch instead. This includes file edits, environment changes,
-fetch, pull, align, force, setup, and tests that write files or caches.
-Permission to perform a mutation is always one-time and scoped to the approved
-operation; it never establishes standing permission for later mutations.
-Requests to provide or fix commands do not authorize executing mutations.
-Earlier mutation authorizations and exceptions elsewhere in this file are
-historical context, not current execution permission. The human-owned commit
-and push boundary below remains in effect.
+The owner updated this policy on 2026-09-23. Agents may edit source, tests,
+documentation, and other task-related files directly on disk without advance
+patch previews or one-time permission. Preserve existing user work and leave
+changes as unstaged, uncommitted working-tree diffs for human review.
+
+Tests and diagnostics are authorized on an ongoing basis, including normal
+temporary files, caches, reports, screenshots, traces, and test-managed processes
+that are cleaned up afterward. Do not request permission for these activities.
+Tool-enforced sandbox approvals still apply. Dependency installation and
+environment changes are not authorized merely by permission to run tests.
+
+Agents must never mutate Git or gCloud state. This includes staging, commits,
+amending, tags, pushes, fetches, pulls, branch/index changes, resets, stashes,
+Git configuration changes, and cloud configuration or resource mutations.
+Do not run wrappers that perform these actions. Read-only Git and cloud
+inspection is allowed; prefer Git's --no-optional-locks for status inspection.
+Earlier setup/fetch/pull/align/force authorizations elsewhere in this file are
+historical and do not override this prohibition. The human owns those actions
+and the commit/push handoffs below.
 
 
 This file governs work across this workspace and its independent repositories.

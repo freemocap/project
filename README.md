@@ -84,6 +84,16 @@ Run from the workspace root or use `poe -C /path/to/project <command>`.
 | `poe align` | Fetch, align and pull core dependencies, then refresh Python environments |
 | `poe align --force` | Same, discarding tracked dependency edits |
 | `poe test-tools` | Run tooling tests using disposable Git repositories and mocked uv installs |
+| `poe test-reference` | Run fresh FreeMoCap posthoc processing and prepared-data consumer tests |
+| `poe test-reference-consumers` | Run only consumers, reusing prepared results |
+| `poe test-reference-fresh` | Run only fresh calibration and mocap in isolated scratch space |
+
+The reference-test tasks select `repos/freemocap` and its existing Python
+environment automatically. They do not install or refresh dependencies
+(`uv run --no-sync`). That environment must already include pytest and the core
+pipeline dependencies. Missing reference recordings are downloaded by the test
+helper; prepared results are reused by consumer tests. Fresh tests preserve
+prepared results and clean their scratch outputs after success.
 
 Setup, organize, fetch, pull, and align support `--dry-run`. Fetch, pull, and
 align accept optional repository names; normal use needs none. Dry-run and

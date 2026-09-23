@@ -9,3 +9,6 @@ fetch = { script = "scripts.workspace:poe_main", help = "Fetch origin for each r
 pull = { script = "scripts.workspace:poe_main", help = "Pull configured repositories with fast-forward only; supports --dry-run" }
 align = { script = "scripts.workspace:poe_main", help = "Fetch, align, pull, and rebuild Python environments; --force discards tracked edits" }
 test-tools = { script = "scripts.workspace:poe_main", help = "Test workspace tooling against temporary local Git repositories" }
+test-reference = { cmd = "uv run --no-sync python -B -m pytest freemocap/tests/reference_recordings -v -s", cwd = "repos/freemocap", help = "Run fresh posthoc processing and prepared-data consumer tests" }
+test-reference-consumers = { cmd = "uv run --no-sync python -B -m pytest freemocap/tests/reference_recordings/test_prepared_consumers.py -v", cwd = "repos/freemocap", help = "Test readers and playback using retained prepared data" }
+test-reference-fresh = { cmd = "uv run --no-sync python -B -m pytest freemocap/tests/reference_recordings/test_fresh_posthoc.py -v -s", cwd = "repos/freemocap", help = "Run real calibration and mocap in clean scratch space" }
