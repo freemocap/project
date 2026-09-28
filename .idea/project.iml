@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/repos/freemocap_blender_addon/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/repos/utils/skellylogs/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/repos/utils/skellypings/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.test-artifacts/forge-wheel/.venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
