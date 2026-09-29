@@ -33,6 +33,20 @@ that are cleaned up afterward. Do not request permission for these activities.
 Tool-enforced sandbox approvals still apply. Dependency installation and
 environment changes are not authorized merely by permission to run tests.
 
+Generated artifacts must be ignored before they are created. Before running
+tests, diagnostics, experiments, builds, or temporary scripts, identify their
+output paths and verify that the owning repository ignores them with
+`git check-ignore`. Add narrowly scoped `.gitignore` rules first when needed,
+or use an external temporary directory. Prefer `.test-artifacts/` for local
+test reports, screenshots, traces, generated bundles, scratch scripts, and
+processed dataset copies. An outer workspace ignore does not apply inside
+independent child repositories. Never hide source tests or intentional fixtures
+with broad file-extension ignores. Before handoff, inspect untracked files and
+check that generated artifacts have not become tracked. Ignore rules do not
+untrack existing files; report those for human-owned Git cleanup. Do not delete
+user data, untrack files, or rewrite history without the owner's direction and
+subject to the Git-state prohibition below.
+
 Agents must never mutate Git or gCloud state. This includes staging, commits,
 amending, tags, pushes, fetches, pulls, branch/index changes, resets, stashes,
 Git configuration changes, and cloud configuration or resource mutations.
